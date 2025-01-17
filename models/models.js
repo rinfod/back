@@ -1,3 +1,7 @@
+/*
+Autores: Norma, Galdina, Edú y Rolando
+*/
+
 const mongoose = require('mongoose');
 
 // Modelo
