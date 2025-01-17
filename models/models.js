@@ -1,5 +1,6 @@
 /*
 Autores: Norma, Galdina, Edú y Rolando
+Fecha de creación: 17/01/2025
 */
 
 const mongoose = require('mongoose');

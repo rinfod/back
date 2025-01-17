@@ -1,3 +1,8 @@
+/*
+Autores: Norma, Galdina, Edú y Rolando
+Fecha de creación: 17/01/2025
+*/
+
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
