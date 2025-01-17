@@ -1,4 +1,3 @@
-
 const express = require('express');
 const Item = require('../models/models'); // Import the model
 
@@ -10,7 +9,22 @@ router.get('/items', async (req, res) => {
     res.json(items);
 });
 
+// Ruta para buscar lugares por distrito
+router.get('/item', async (req, res) => {
+    console.log('consulta')
+    const { distrito } = req.query;
+  
+    try {
+      // Buscar documentos donde el campo "district" coincida con el valor proporcionado
+      const item = await Item.find({ distrito: new RegExp(distrito, 'i') });
+      res.json(item);
+    } catch (error) {
+      res.status(500).json({ message: 'Error al buscar lugares', error });
+    }
+  });
+
 router.post('/items', async (req, res) => {
+    console.log('creado')
     const newItem = new Item(req.body);
     await newItem.save();
     res.json(newItem);
