@@ -1,3 +1,8 @@
+/*
+Autores: Norma, Galdina, Edú y Rolando
+Fecha de creación: 17/01/2025
+*/
+
 const express = require('express');
 const Item = require('../models/models'); // Import the model
 
