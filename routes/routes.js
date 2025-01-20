@@ -1,6 +1,7 @@
 /*
 Autores: Norma, Galdina, Edú y Rolando
 Fecha de creación: 17/01/2025
+Servidor con node...
 */
 
 const express = require('express');
