@@ -8,9 +8,15 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 
-const routes = require('../routes/routes');
-const routes_produccion = require('../routes/routes_produccion')
 
+
+const dotenv = require('dotenv');
+const authRoutes = require('../routes/auth');
+
+const routes = require('../routes/routes');
+const routes_produccion = require('../routes/routes_produccion');
+
+dotenv.config();
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
@@ -23,6 +29,8 @@ mongoose.connect('mongodb://127.0.0.1:27017/obsano', {
 .then(() => console.log('Conectado a MongoDB'))
 .catch(err => console.log(err));
 
+// Rutas
+app.use('/api/auth', authRoutes);
 app.use('/api', routes);
 app.use('/prod', routes_produccion);
 
