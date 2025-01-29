@@ -4,9 +4,18 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/user');
 const router = express.Router();
 
+
+// Rutas CRUD
+router.get('/users', async (req, res) => {
+    const items = await User.find();
+    res.json(items);
+});
+
 // Registrar usuario
 router.post('/register', async (req, res) => {
+  console.log('Si está ingresando : ');
   const { email, password } = req.body;
+  console.log('email: ', email, ' Password: ', password)
 
   try {
     const userExists = await User.findOne({ email });
