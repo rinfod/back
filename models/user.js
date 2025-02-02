@@ -1,3 +1,8 @@
+/*
+Autores: Norma, Galdina, Edú y Rolando
+Fecha de creación: 17/01/2025
+*/
+
 // models/User.js
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');

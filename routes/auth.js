@@ -1,3 +1,8 @@
+/*
+Autores: Norma, Galdina, Edú y Rolando
+Fecha de creación: 17/01/2025
+*/
+
 // routes/auth.js
 const express = require('express');
 const jwt = require('jsonwebtoken');
@@ -13,9 +18,7 @@ router.get('/users', async (req, res) => {
 
 // Registrar usuario
 router.post('/register', async (req, res) => {
-  console.log('Si está ingresando : ');
   const { email, password } = req.body;
-  console.log('email: ', email, ' Password: ', password)
 
   try {
     const userExists = await User.findOne({ email });
@@ -61,6 +64,14 @@ router.get('/user', async (req, res) => {
   } catch (err) {
     res.status(401).json({ msg: 'Token is not valid' });
   }
+});
+
+// Eliminar usuario
+router.delete('/user/:id', async (req, res) => {
+  await User.findByIdAndDelete(req.params.id);
+  res.json({ message: 'Item eliminado' });
+
+
 });
 
 module.exports = router;

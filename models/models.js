@@ -9,9 +9,14 @@ const mongoose = require('mongoose');
 const ItemSchema = new mongoose.Schema({
     region: { type: String, required: true },
     distrito: { type: String },
-    descripcion: {type: String},
+    descripcion: { type: String },
+    estadoNutricional: {
+        desnutricion: { type: Number, required: true },  // Porcentaje de desnutrición
+        normopeso: { type: Number, required: true },     // Porcentaje de peso normal
+        sobrepeso: { type: Number, required: true },     // Porcentaje de sobrepeso
+        obesidad: { type: Number, required: true }       // Porcentaje de obesidad
+    }
 });
-//const Item = mongoose.model('Item', ItemSchema);
 
 // Export model
 module.exports = mongoose.model('Item', ItemSchema);

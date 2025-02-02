@@ -16,7 +16,6 @@ router.get('/items', async (req, res) => {
 
 // Ruta para buscar lugares por distrito
 router.get('/item', async (req, res) => {
-    console.log('consulta')
     const { distrito } = req.query;
   
     try {
@@ -29,7 +28,6 @@ router.get('/item', async (req, res) => {
   });
 
 router.post('/items', async (req, res) => {
-    console.log('creado')
     const newItem = new Item(req.body);
     await newItem.save();
     res.json(newItem);

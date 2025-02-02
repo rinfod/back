@@ -12,7 +12,6 @@ const ItemSchema = new mongoose.Schema({
     resumen: {type: String},
     autor: {type: String},
 });
-//const Item = mongoose.model('Item', ItemSchema);
 
 // Export model
 module.exports = mongoose.model('Produccion', ItemSchema);
